@@ -2,7 +2,7 @@
 ## Enumerating MS Windows host, for enumerating MS Active Directory
 
 ### System
-first get information about the system we are in
+first get information about the system we are in using `systeminfo`
 
 ```cmd
 C:\> systeminfo
@@ -160,6 +160,7 @@ Lockout observation window (minutes):                 10
 Computer role:                                        WORKSTATION
 The command completed successfully.
 ```
+
 
 
 
