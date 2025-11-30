@@ -10,7 +10,7 @@ you can use the Backup Operators group. Users in this group won't have administr
 C:\> net localgroup "Backup Operators" <user> /add
 ```
 
-Since this is an unprivileged account, it cannot RDP or WinRM back to the machine unless we add it to the Remote Desktop Users (RDP) or Remote Management Users (WinRM) groups.
+Since this is an unprivileged account, it cannot RDP or WinRM back to the machine unless we add it to the `Remote Desktop Users (RDP)` or `Remote Management Users (WinRM)` groups.
 
 ```cmd
 C:\> net localgroup "Remote Management Users" <user> /add
