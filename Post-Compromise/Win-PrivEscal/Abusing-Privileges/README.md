@@ -9,7 +9,7 @@ These privileges allow bypassing DACLs to read/write any file, useful for backup
 
 Attackers can use these privileges to copy registry hives `SAM and SYSTEM` and extract password hashes. Tools like `Impacket’s secretsdump` can be used to retrieve the hashes and then perform `Pass-the-Hash` attacks to gain SYSTEM access.
 
-##SeTakeOwnership Privilege
+## SeTakeOwnership Privilege
 Allows users to take ownership of any file or object on the system.
 
 An attacker can use this privilege to replace system executables `(like utilman.exe)`, giving themselves `SYSTEM-level access`. The process includes taking ownership of the file, granting full permissions, and replacing the executable with a payload.
